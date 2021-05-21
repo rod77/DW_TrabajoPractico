@@ -32,9 +32,11 @@ nav {
   flex-wrap: wrap;
   margin-bottom: 50px;
   img {
+    display: none;
     flex-grow: 0;
   }
   div {
+    display: none;
     flex-grow: 1;
   }
   ul {
@@ -66,7 +68,7 @@ footer {
 }
 
 .sectionServicios {
-  height: 500px;
+  height: 50em;
 }
 .center {
   text-align: center;
@@ -82,18 +84,29 @@ footer {
     font-family: $font_principal;
     line-height: 20px;
     padding-top: 20px;
-    display: flex;
     margin-bottom: 50px;
   }
 
   &__item {
-    margin-right: 20px;
     list-style: none;
+
+    &__link {
+      text-decoration: none;
+      color: $color_rosaOscuro;
+      font-size: 24px;
+      font-weight: 400;
+      position: relative;
+      text-transform: uppercase;
+      margin-left: 10px;
+      &:hover {
+        width: 100%;
+        font-weight: 700;
+      }
+    }
   }
 
   &__img {
-    @extend .Img_Small;
-    text-align: left;
+    display: none;
   }
 }
 
@@ -132,6 +145,8 @@ footer {
   }
   &__img {
     border-radius: 50px 20px;
+    height: 50%;
+    width: 50%;
   }
   &__titulo {
     margin-top: 20px;
@@ -150,6 +165,7 @@ footer {
   justify-content: space-around;
   &__lista {
     margin-right: 20px;
+    margin-bottom: 20px;
   }
   &__title {
     color: $color_amarillo;
@@ -157,8 +173,14 @@ footer {
     text-transform: uppercase;
   }
   &__img {
-    @extend .Img_Small;
+    width: 50px;
+    height: 50px;
     text-align: center;
+  }
+  &__listaInterna {
+    list-style: none;
+    font-size: 20px;
+    margin-left: 25px;
   }
 }
 
@@ -212,7 +234,7 @@ footer {
     font-size: 20px;
     line-height: 20px;
     word-spacing: 1px;
-    margin: 20px 0px 0px 70px;
+    margin: 20px 0px 0px 0px;
   }
 
   &__integrante1 {
@@ -256,14 +278,15 @@ footer {
 
 .formulario {
   position: relative;
-  width: 500px;
+  width: 370px;
   margin: 50px auto 100px auto;
   &__input {
     font-size: 0.875em;
-    width: 470px;
+    width: 345px;
     height: 50px;
-    padding: 0px 15px 0px 15px;
+    padding: 0px 0px 0px 15px;
 
+    margin: 0px 0px 0px 0px;
     background: transparent;
     outline: none;
     color: $color_verde;
@@ -278,12 +301,12 @@ footer {
   }
 
   &__textarea {
-    width: 470px;
-    max-width: 470px;
+    width: 345px;
+    max-width: 345px;
     height: 110px;
     max-height: 110px;
-    padding: 15px;
-
+    padding: 10px 0px 0px 15px;
+    margin: 0px 0px 0px 0px;
     background: transparent;
     outline: none;
 
@@ -300,10 +323,10 @@ footer {
   }
 
   &__boton {
-    width: 502px;
+    width: 362px;
     height: 50px;
 
-    padding: 0;
+    padding: 0px;
     margin: -5px 0px 0px 0px;
 
     font-family: $font_principal;
@@ -338,9 +361,10 @@ footer {
 
   &__video {
     position: relative;
-    width: 500px;
+    width: 370px;
+    height: 273px;
     margin-bottom: 30px;
-    margin-left: 30px;
+    margin-left: 0px;
   }
 }
 
@@ -357,6 +381,30 @@ footer {
 
 /* Para Desktop */
 @media only screen and (min-width: 1024px) {
+  nav {
+    background: rgb(251, 221, 142);
+    background: linear-gradient(
+      180deg,
+      rgba(251, 221, 142, 1) 50%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    img {
+      display: inline-block;
+      flex-grow: 0;
+    }
+    div {
+      display: inline-block;
+      flex-grow: 1;
+    }
+    ul {
+      flex-grow: 0;
+    }
+  }
+
   .centradoVertical {
     margin-top: 25%;
     text-align: center;
@@ -401,6 +449,187 @@ footer {
       text-align: left;
       margin: 0.875em 0 0.875em 0;
       font-family: $font_principal;
+    }
+  }
+
+  .inicio {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    &__contenido {
+      margin-right: 20px;
+      text-align: center;
+    }
+    &__img {
+      border-radius: 50px 20px;
+      height: 100%;
+      width: 100%;
+    }
+    &__titulo {
+      margin-top: 20px;
+    }
+
+    &__subTitulo {
+      margin-top: 20px;
+    }
+  }
+  .menu {
+    color: $color_rosaOscuro;
+
+    &__lista {
+      font-size: 15px;
+      font-family: $font_principal;
+      line-height: 20px;
+      padding-top: 20px;
+      display: flex;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__item {
+      margin-right: 20px;
+      list-style: none;
+
+      &__link {
+        text-decoration: none;
+        color: $color_rosaOscuro;
+        font-size: 24px;
+        font-weight: 400;
+        position: relative;
+        text-transform: uppercase;
+        &:hover {
+          width: 100%;
+          font-weight: 700;
+        }
+      }
+    }
+    &__img {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      text-align: left;
+    }
+  }
+
+  .sectionServicios {
+    height: 35em;
+  }
+  .servicios {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    &__lista {
+      margin-right: 20px;
+    }
+    &__title {
+      color: $color_amarillo;
+      background-color: $color_rosaOscuro;
+      text-transform: uppercase;
+    }
+    &__img {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      margin-top: 0px;
+    }
+    &__listaInterna {
+      list-style: circle;
+      font-size: 20px;
+      margin-left: 25px;
+    }
+  }
+  .articulo {
+    margin: 0.875em 0 0.875em 0;
+    &__titulo {
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: left;
+      margin: 0.875em 0 0.875em 0;
+      font-family: $font_principal;
+    }
+
+    &__video {
+      position: relative;
+      width: 500px;
+      margin-bottom: 30px;
+      margin-left: 30px;
+    }
+  }
+
+  // FORMULARIO
+
+  .formulario {
+    position: relative;
+    width: 500px;
+    margin: 50px auto 100px auto;
+    &__input {
+      font-size: 0.875em;
+      width: 470px;
+      height: 50px;
+      padding: 0px 15px 0px 15px;
+
+      background: transparent;
+      outline: none;
+      color: $color_verde;
+      font-family: $font_principal;
+
+      border: solid 1px $color_verde;
+      border-bottom: none;
+      &:hover {
+        background: $color_amarillo;
+        color: $color_rosaOscuro;
+      }
+    }
+
+    &__textarea {
+      width: 470px;
+      max-width: 470px;
+      height: 110px;
+      max-height: 110px;
+      padding: 15px;
+
+      background: transparent;
+      outline: none;
+
+      color: $color_verde;
+      font-family: $font_principal;
+      font-size: 0.875em;
+
+      border: solid 1px $color_verde;
+      resize: none;
+      &:hover {
+        background: $color_amarillo;
+        color: $color_rosaOscuro;
+      }
+    }
+
+    &__boton {
+      width: 502px;
+      height: 50px;
+
+      padding: 0;
+      margin: -5px 0px 0px 0px;
+
+      font-family: $font_principal;
+      font-size: 0.875em;
+      color: #b3aca7;
+
+      outline: none;
+      cursor: pointer;
+
+      border: solid 1px $color_verde;
+      border-top: none;
+
+      background: transparent;
+      &:hover {
+        background: $color_verde;
+        color: $color_amarillo;
+      }
     }
   }
 }
